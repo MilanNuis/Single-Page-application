@@ -1,17 +1,12 @@
 <?php
 
 // Retrieve database credentials from environment variables
-$host = getenv('DB_HOST');
-$dbname = getenv('DB_NAME');
-$user = getenv('DB_USER');
-$password = getenv('DB_PASSWORD');
 
 try {
-    $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
-    $db = new PDO($dsn, $user, $password);
+    $dsn = "mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV["DB_NAME"] . ";charset=utf8mb4";
+    $db = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully!";
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
