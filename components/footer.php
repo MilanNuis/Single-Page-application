@@ -1,23 +1,23 @@
 <?php
 require_once("./unitils/connection.php");
 ?>
-<footer class="bg-white" aria-labelledby="footer-heading">
+<footer class="bg-gradient-to-r from-red-500 to-red-700 rounded-t-2xl" aria-labelledby="footer-heading">
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-16">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="grid grid-cols-2 gap-8 xl:col-span-2">
                 <div class="md:grid md:grid-cols-2 md:gap-8">
                     <div>
-                        <h3 class="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
+                        <h3 class="text-sm font-semibold leading-6 text-gray-900">Contact</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li>
-                                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Marketing</a>
+                                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">T +31 (0)597 591596</a>
                             </li>
                             <li>
-                                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Analytics</a>
+                                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">F +31 (0)597 591938</a>
                             </li>
                             <li>
-                                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Commerce</a>
+                                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">E info@pmot.nl</a>
                             </li>
                             <li>
                                 <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Insights</a>
