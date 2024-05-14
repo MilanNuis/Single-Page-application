@@ -65,3 +65,8 @@ CREATE TABLE IF NOT EXISTS `orders` (
   FOREIGN KEY (`addressInformation`) REFERENCES `addresses` (`id`),
   FOREIGN KEY (`paymentInformation`) REFERENCES `payments` (`id`)
 );
+
+CREATE TABLE IF NOT EXISTS `newsletterEmail` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `email` VARCHAR(255)
+);
