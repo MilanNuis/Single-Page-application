@@ -1,1 +1,2 @@
-<p>test</p>
+<?php
+$hideNav = true;
