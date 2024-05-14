@@ -4,5 +4,8 @@
   },
   "scripts": {
     "watch": "npx tailwindcss -i ./input.css -o ./output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7"
   }
 }
