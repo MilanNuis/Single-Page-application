@@ -15,11 +15,18 @@ require_once("./configs/helper.php");
 </head>
 
 <body>
-    <?php include("./components/nav.php") ?>
+
+    <?php if (!str_contains(file_get_contents(getPage()), "hideNav = true")) {
+        include("./components/nav.php");
+    }
+    ?>
 
     <?php require_once(getPage()) ?>
 
-    <?php include("./components/footer.php") ?>
+    <?php if (!str_contains(file_get_contents(getPage()), "hideNav = true")) {
+        include("./components/footer.php");
+    }
+    ?>
 </body>
 
 </html>
