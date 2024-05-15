@@ -67,7 +67,7 @@ require_once("./unitils/connection.php");
             </div>
             <div class="mt-10 xl:mt-0">
                 <h3 class="text-sm font-semibold leading-6 text-white">Meld je aan voor onze nieuwsbrief</h3>
-                <form class="mt-6 sm:flex sm:max-w-md" method="post">
+                <form class="mt-6 sm:flex sm:max-w-md" method="post" action="../controlers/newsLetter.php">
                     <label for="email-address" class="sr-only">Email address</label>
                     <input type="email" name="email-address" id="email-address" autocomplete="email" required class="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-white shadow-sm ring-1 ring-inset ring-white-300 placeholder:text-white-400 focus:ring-2 focus:ring-inset focus:ring-indigo sm:w-64 sm:text-sm sm:leading-6 xl:w-full" placeholder="Enter your email">
                     <div class="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
