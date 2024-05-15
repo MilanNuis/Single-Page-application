@@ -1,17 +1,7 @@
-<!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/typography'),
-    ],
-  }
-  ```
--->
+<?php
+require_once("./unitils/connection.php");
+?>
+
 <div class="bg-white">
   <div class="pb-16 pt-6 sm:pb-24">
     <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -24,7 +14,7 @@
             </svg>
           </div>
         </li>
-        
+
         <li class="text-sm">
           <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Pai Botzees</a>
         </li>
@@ -83,9 +73,9 @@
         <div class="mt-8 lg:col-span-5">
           <form>
             <!-- Color picker -->
-            
+
             <!-- Size picker -->
-            
+
             <button type="submit" class="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-red-500 px-8 py-3 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2">Toevoegen aan mandje</button>
           </form>
 
