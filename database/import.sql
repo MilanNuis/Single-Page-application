@@ -1,19 +1,12 @@
--- Drop database if it exists
 DROP DATABASE IF EXISTS deepdive;
-
--- Create database if it does not exist
 CREATE DATABASE IF NOT EXISTS deepdive;
-
--- Switch to the deepdive database
 USE deepdive;
 
--- Create categories table (if not already created)
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(255)
 );
 
--- Create customers table
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `firstname` VARCHAR(255),
@@ -25,18 +18,16 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-
--- Create products table with foreign key reference to categories
 CREATE TABLE IF NOT EXISTS `products` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(255),
   `price` DECIMAL(10, 2),
   `stock` INT,
+  `imageURL` varchar(255),
   `category` INT,
   CONSTRAINT `fk_product_category` FOREIGN KEY (`category`) REFERENCES `categories` (`id`)
 );
 
--- Create payments table
 CREATE TABLE IF NOT EXISTS `payments` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `ownerId` INT,
@@ -44,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `payments` (
   FOREIGN KEY (`ownerId`) REFERENCES `customers` (`id`)
 );
 
--- Create addresses table
 CREATE TABLE IF NOT EXISTS `addresses` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `postal` VARCHAR(255),
@@ -53,7 +43,6 @@ CREATE TABLE IF NOT EXISTS `addresses` (
   `houseNumber` INT
 );
 
--- Create orders table
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `orderOwner` INT,
