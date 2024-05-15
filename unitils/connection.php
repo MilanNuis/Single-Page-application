@@ -1,12 +1,11 @@
 <?php
 
-// Retrieve database credentials from environment variables
-
 try {
-    $dsn = "mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV["DB_NAME"] . ";charset=utf8mb4";
-    $db = new PDO($dsn, $_ENV['DB_USER'], $_ENV['DB_PASSWORD']);
+    $dsn = "mysql:host=localhost;dbname=deepdive";
+    $db = new PDO($dsn, "bit_academy", "bit_academy");
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
+    exit;
 }

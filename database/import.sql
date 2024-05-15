@@ -16,14 +16,15 @@ CREATE TABLE IF NOT EXISTS `categories` (
 -- Create customers table
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
-  `username` VARCHAR(255),
-  `description` TEXT,
+  `firstname` VARCHAR(255),
+  `lastname` VARCHAR(255),
   `email` VARCHAR(255),
   `password` VARCHAR(255),
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   `country` VARCHAR(255),
-  `isAdmin` BOOLEAN
+  `isAdmin` BOOLEAN DEFAULT false,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 -- Create products table with foreign key reference to categories
 CREATE TABLE IF NOT EXISTS `products` (
