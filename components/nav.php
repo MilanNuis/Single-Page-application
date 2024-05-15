@@ -16,7 +16,7 @@
         <div class="hidden lg:flex lg:gap-x-12">
             <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Shop</a>
             <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Media</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Over ons</a>
+            <a href="?page=aboutUs" class="text-sm font-semibold leading-6 text-gray-900">Over ons</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
