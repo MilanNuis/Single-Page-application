@@ -1,27 +1,29 @@
 <?php
 
 session_start();
+
 require_once('../unitils/connection.php');
 
 $invalidLogin = 0;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $stmt = $db->prepare("SELECT * FROM customers WHERE email = :email AND password = :wachtwoord");
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $stmt = $db->prepare("SELECT * FROM customers WHERE email = :email");
 
     $stmt->bindParam(':email', $_POST['email']);
-    $stmt->bindParam(':wachtwoord', $_POST['password']);
 
     $stmt->execute();
-    $data = $stmt->fetchAll();
-
+    $data = $stmt->fetch();
     if ($data) {
-        header('location: ../index.php');
-        $_SESSION['loggedInUser'] = 1;
+        if (password_verify($_POST['password'], $data['password'])) {
+            header('location: ../?page=home');
+            $_SESSION['loggedInUser'] = 1;
+        } else {
+            $_SESSION['loggedInUser'] = 2;
+            header('location: ../?page=login');
+        }
         exit();
     } else {
         $_SESSION['loggedInUser'] = 2;
         header('location: ../?page=login');
     }
 }
-
-?>

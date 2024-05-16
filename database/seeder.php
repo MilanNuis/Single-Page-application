@@ -2,6 +2,14 @@
 
 require_once('../unitils/connection.php');
 
+$tables = ['products', 'customers'];
+
+foreach ($tables as $table) {
+    $sql = "TRUNCATE TABLE $table";
+    $db->exec($sql);
+    echo "Tabel $table geleegd.", PHP_EOL;
+}
+
 function createUser($firstname, $lastname, $email, $password, $country, $isAdmin, $db)
 {
     $insertQuery = "INSERT INTO customers (firstName, lastName, email, password, country, isAdmin, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())";
@@ -50,27 +58,19 @@ function createCategory($name, $db)
 
 $users = [
     [
-        'firstname' => 'John',
-        'lastname' => 'Doe',
-        'email' => 'john@example.com',
-        'password' => password_hash('secret123', PASSWORD_DEFAULT),
+        'firstname' => 'admin',
+        'lastname' => 'account',
+        'email' => 'admin@gmail.com',
+        'password' => password_hash('admin', PASSWORD_DEFAULT),
         'country' => 'Netherlands',
-        'isAdmin' => false,
-    ],
-    [
-        'firstname' => 'Jane',
-        'lastname' => 'Smith',
-        'email' => 'jane@example.com',
-        'password' => password_hash('qwerty456', PASSWORD_DEFAULT),
-        'country' => 'United States',
         'isAdmin' => true,
     ],
     [
-        'firstname' => 'Alice',
-        'lastname' => 'Johnson',
-        'email' => 'alice@example.com',
-        'password' => password_hash('p@ssw0rd', PASSWORD_DEFAULT),
-        'country' => 'Canada',
+        'firstname' => 'gebruiker',
+        'lastname' => 'voorbeeld',
+        'email' => 'gebruiker@gmail.com',
+        'password' => password_hash('gebruiker', PASSWORD_DEFAULT),
+        'country' => 'Netherlands',
         'isAdmin' => false,
     ],
 ];
@@ -80,31 +80,22 @@ $products = [
         "name" => "School Robot",
         "price" => 199.50,
         "stock" => 10,
-        "categoryId" => 2,
+        "category" => "Robotica",
         "imageURL" => "https://i.imgur.com/pLzJtlT.png"
     ],
     [
-        "name" => "Gigo diverse technieksets 2-16 jaarGigo diverse technieksets",
+        "name" => "Gigo diverse technieksets 2-16 jaar Gigo diverse technieksets",
         "price" => 405.50,
         "stock" => 5,
-        "categoryId" => 2,
+        "category" => "Techniek",
         "imageURL" => "https://i.imgur.com/6Ah7DUH.png"
     ],
     [
         "name" => "Robot Boek",
         "price" => 259.50,
         "stock" => 6,
-        "categoryId" => 1,
+        "category" => "Boeken",
         "imageURL" => "https://i.imgur.com/hZHDHxk.png"
-    ],
-];
-
-$categorys = [
-    [
-        "name" => "Robots"
-    ],
-    [
-        "name" => "Books"
     ],
 ];
 
@@ -120,16 +111,12 @@ foreach ($users as $user) {
     );
 }
 
-foreach ($categorys as $category) {
-    createCategory($category['name'], $db);
-}
-
 foreach ($products as $product) {
     createProduct(
         $product['name'],
         $product['price'],
         $product['stock'],
-        $product['categoryId'],
+        $product['category'],
         $product['imageURL'],
         $db
     );

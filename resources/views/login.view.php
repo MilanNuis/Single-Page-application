@@ -2,11 +2,9 @@
 
 $hideNav = true;
 session_start();
-
-function loginUser () {
-    if ($_SESSION['loggedInUser'] == 2) {
-        echo "Invalide gebruikersnaam/wachtwoord combinatie";
-    }
+$errmsg = "";
+if (isset($_SESSION['loggedInUser']) && $_SESSION['loggedInUser'] == 2) {
+    $errmsg = "Ongeldige inloggegevens";
 }
 
 ?>
@@ -14,7 +12,7 @@ function loginUser () {
 <div class="h-full bg-white">
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-            
+
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Inloggen op je account</h2>
         </div>
 
@@ -27,15 +25,15 @@ function loginUser () {
                         <input id="email" name="email" type="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     </div>
                 </div>
-                <h2>
-                    <?php loginUser(); ?>
-                </h2>
                 <div>
                     <div class="flex items-center justify-between">
                         <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Wachtwoord</label>
                     </div>
                     <div class="mt-2">
                         <input id="password" name="password" type="password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <div class="mt-2">
+                        <p class="text-red-500 font-bold"><?= $errmsg; ?></p>
                     </div>
                 </div>
 
