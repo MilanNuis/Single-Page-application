@@ -52,13 +52,13 @@ $hideNav = true;
                     </div>
                 </div>
                 <div>
-                    <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Maak account</button>
+                    <button type="submit" class="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Maak account</button>
                 </div>
             </form>
 
             <p class="mt-10 text-center text-sm text-gray-500">
                 Heb je al een account?
-                <a href="?page=login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Klik dan hier om in te loggen.</a>
+                <a href="?page=login" class="font-semibold leading-6 text-red-500 hover:text-red-500">Klik dan hier om in te loggen.</a>
             </p>
         </div>
     </div>
