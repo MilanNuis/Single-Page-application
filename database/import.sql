@@ -23,6 +23,17 @@ CREATE TABLE IF NOT EXISTS `products` (
   `category` varchar(255)
 );
 
+CREATE TABLE IF NOT EXISTS `articles` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `title` VARCHAR(255),
+  `author` TEXT,
+  `authorURL` varchar(255),
+  `content` TEXT,
+  `tag` varchar(255),
+  `date` timestamp DEFAULT CURRENT_TIMESTAMP
+);
+
+
 CREATE TABLE IF NOT EXISTS `payments` (
   `id` INT PRIMARY KEY AUTO_INCREMENT,
   `ownerId` INT,

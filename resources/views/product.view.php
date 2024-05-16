@@ -1,5 +1,18 @@
 <?php
 require_once("./unitils/connection.php");
+
+$id = $_GET['id'];
+
+$stmt = $db->prepare("SELECT * FROM products WHERE id = :id");
+
+$stmt->bindParam(':id', $id);
+
+$stmt->execute();
+
+$product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// var_dump($product);
+
 ?>
 
 <div class="bg-white">
@@ -8,7 +21,7 @@ require_once("./unitils/connection.php");
       <ol role="list" class="flex items-center space-x-4">
         <li>
           <div class="flex items-center">
-            <a href="#" class="mr-4 text-sm font-medium text-gray-900">Robotica</a>
+            <a href="#" class="mr-4 text-sm font-medium text-gray-900"><?= $product['category'] ?></a>
             <svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-gray-300">
               <path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
             </svg>
@@ -16,7 +29,7 @@ require_once("./unitils/connection.php");
         </li>
 
         <li class="text-sm">
-          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600">Pai Botzees</a>
+          <a href="#" aria-current="page" class="font-medium text-gray-500 hover:text-gray-600"><?= $product['name'] ?></a>
         </li>
       </ol>
     </nav>
@@ -24,8 +37,8 @@ require_once("./unitils/connection.php");
       <div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
         <div class="lg:col-span-5 lg:col-start-8">
           <div class="flex justify-between">
-            <h1 class="text-xl font-medium text-gray-900">Pai Botzees</h1>
-            <p class="text-xl font-medium text-gray-900">€ 114,-</p>
+            <h1 class="text-xl font-medium text-gray-900"><?= $product['name'] ?></h1>
+            <p class="text-xl font-medium text-gray-900">€ <?= $product['price'] ?></p>
           </div>
           <!-- Reviews -->
           <div class="mt-4">
@@ -66,7 +79,7 @@ require_once("./unitils/connection.php");
           <h2 class="sr-only">Images</h2>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 lg:gap-8">
-            <img src="https://pmot.nl/wp-content/uploads/color-box-002-600x489.jpg" alt="robot set" class="lg:col-span-2 lg:row-span-2 rounded-lg">
+            <img src="<?= $product['imageURL'] ?>" alt="robot set" class="lg:col-span-2 lg:row-span-2 rounded-lg">
           </div>
         </div>
 
@@ -84,7 +97,7 @@ require_once("./unitils/connection.php");
             <h2 class="text-sm font-medium text-gray-900">Beschrijving</h2>
 
             <div class="prose prose-sm mt-4 text-gray-500">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <p><?= $product['description'] ?></p>
             </div>
           </div>
 

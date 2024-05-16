@@ -15,15 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = $stmt->fetch();
     if ($data) {
         if (password_verify($_POST['password'], $data['password'])) {
-            header('location: ../?page=home');
-            $_SESSION['loggedInUser'] = 1;
+            $_SESSION['loggedIn'] = 1;
+            $_SESSION['loggedInUser'] = [
+                "userId" => $data['id'],
+                "admin" => $data['isAdmin']
+            ];
+            header('location: ../?page=user');
         } else {
-            $_SESSION['loggedInUser'] = 2;
-            header('location: ../?page=login');
+            $_SESSION['loggedIn'] = 2;
+            header('location: ../?page=user');
         }
         exit();
     } else {
-        $_SESSION['loggedInUser'] = 2;
-        header('location: ../?page=login');
+        $_SESSION['loggedIn'] = 2;
+        header('location: ../?page=user');
     }
 }

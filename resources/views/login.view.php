@@ -1,9 +1,8 @@
 <?php
 
 $hideNav = true;
-session_start();
 $errmsg = "";
-if (isset($_SESSION['loggedInUser']) && $_SESSION['loggedInUser'] == 2) {
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedInUser'] == 2) {
     $errmsg = "Ongeldige inloggegevens";
 }
 

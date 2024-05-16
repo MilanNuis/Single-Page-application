@@ -12,3 +12,9 @@ function getPage()
 
     return "./resources/views/home.view.php";
 }
+
+
+function isAdmin()
+{
+    return isset($_SESSION['loggedInUser']) && $_SESSION['loggedInUser']['admin'] == 1 ? true : false;
+}

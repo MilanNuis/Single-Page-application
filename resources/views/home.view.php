@@ -1,4 +1,3 @@
-
 <div class="bg-gradient-to-r from-red-500 to-red-500 "> <!-- rounded-2xl mx-4 -->
     <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="flex justify-center p-8">
@@ -51,7 +50,6 @@
 
         </div>
     <div>
-
 </div>
 
 
@@ -134,4 +132,3 @@
         </div>
     </div>
 </div>
-
