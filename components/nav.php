@@ -1,7 +1,7 @@
 <header class="bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
+            <a href="?page=home" class="-m-1.5 p-1.5">
                 <h1 class=" text-white bg-red-500 rounded p-1 px-2  font-bold">PMOT</h1>
             </a>
         </div>
@@ -14,12 +14,12 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Shop</a>
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Media</a>
+            <a href="?page=shop" class="text-sm font-semibold leading-6 text-gray-900">Shop</a>
+            <a href="?page=media" class="text-sm font-semibold leading-6 text-gray-900">Media</a>
             <a href="?page=aboutUs" class="text-sm font-semibold leading-6 text-gray-900">Over ons</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+            <a href="?page=login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
         </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -48,7 +48,7 @@
                         <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
                     </div>
                     <div class="py-6">
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+                        <a href="?page=login" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
                     </div>
                 </div>
             </div>
