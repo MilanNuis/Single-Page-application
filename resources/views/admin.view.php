@@ -1,5 +1,10 @@
 <?php
 $hideNav = true;
+
+if (!isAdmin()) {
+    header("Location: /");
+}
+
 ?>
 
 <header class="absolute inset-x-0 top-0 z-50 flex h-16 border-b border-gray-900/10">
@@ -16,11 +21,11 @@ $hideNav = true;
         <nav class="hidden md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6 md:text-gray-700">
         </nav>
         <div class="flex flex-1 items-center justify-end gap-x-8">
-            <button type="button" class="rounded-full bg-red-500 p-1.5 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            <a href="?page=addproduct" class="rounded-full bg-red-500 p-1.5 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                 <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
                 </svg>
-            </button>
+            </a>
             <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">Your profile</span>
                 <img class="h-8 w-8 rounded-full bg-gray-800" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
