@@ -27,7 +27,6 @@
                   Jan Modaal
                 </a>
               </p>
-              <p class="text-gray-600">Eigenaar / CEO</p>
             </div>
           </div>
         </article>
