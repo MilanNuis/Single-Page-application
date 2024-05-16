@@ -56,7 +56,7 @@
 
 
 <div class="bg-white mt-10 py-8">
-    <h2 class="text-3xl font-bold mb-2 tracking-tight text-black sm:text-4xl flex text-center justify-center">Door <span class="mx-2 text-red-500 font-bold"> PMOT</span> aanbevolen producten</h2>
+    <h2 class="text-3xl font-bold mb-2 text-black sm:text-4xl text-center justify-center">Door <span class="text-red-500 font-bold">PMOT</span> aanbevolen producten</h2>
  
     <div class="mx-auto max-w-7xl px-6 lg:px-8 pt-3 pb-3">
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

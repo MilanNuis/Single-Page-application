@@ -2,7 +2,7 @@
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
             <a href="?page=home" class="-m-1.5 p-1.5">
-                <h1 class=" text-white bg-red-500 rounded p-1 px-2  font-bold">PMOT</h1>
+                <h1 class=" text-white bg-red-500 rounded p-1 px-2 font-bold">PMOT</h1>
             </a>
         </div>
         <div class="flex lg:hidden">
@@ -14,12 +14,20 @@
             </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="?page=shop" class="text-sm font-semibold leading-6 text-gray-900">Shop</a>
-            <a href="?page=media" class="text-sm font-semibold leading-6 text-gray-900">Media</a>
-            <a href="?page=aboutUs" class="text-sm font-semibold leading-6 text-gray-900">Over ons</a>
+            <a href="?page=categorie" class="text-sm font-semibold leading-6 text-gray-900 border-b-2 px-2 transition duration-200 ease-in-out <?php echo $_GET['page'] == 'shop' ? 'border-red-500' : 'border-transparent hover:border-red-500'; ?>">Shop</a>
+            <a href="?page=media" class="text-sm font-semibold leading-6 text-gray-900 border-b-2 px-2 transition duration-200 ease-in-out <?php echo $_GET['page'] == 'media' ? 'border-red-500' : 'border-transparent hover:border-red-500'; ?>">Media</a>
+            <a href="?page=aboutUs" class="text-sm font-semibold leading-6 text-gray-900 border-b-2 px-2 transition duration-200 ease-in-out <?php echo $_GET['page'] == 'aboutUs' ? 'border-red-500' : 'border-transparent hover:border-red-500'; ?>">Over ons</a>
         </div>
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="?page=login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end space-x-4">
+            <div class="relative">
+                <div class="t-0 absolute left-3">
+                    <p class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">3</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="file: mt-4 h-6 w-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                </svg>
+            </div>
+            <a href="?page=login" class="text-sm font-semibold leading-6 hover:scale-105 transition ease-in-out duration-200 hover:text-gray-900/80 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
         </div>
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
@@ -42,7 +50,7 @@
             <div class="mt-6 flow-root">
                 <div class="-my-6 divide-y divide-gray-500/10">
                     <div class="space-y-2 py-6">
-                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
+                        <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibol leading-7 text-gray-900 hover:bg-gray-50">Product</a>
                         <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
                         <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
                         <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
