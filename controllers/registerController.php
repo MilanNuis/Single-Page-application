@@ -15,13 +15,18 @@ function createUser($firstname, $lastname, $email, $password, $country, $isAdmin
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
     createUser(
         $_POST['firstname'],
         $_POST['lastname'],
         $_POST['email'],
-        $_POST['password'],
+        $hashedPassword,
         $_POST['country'],
         false,
         $db
     );
+
+    header("Location: ../?page=login");
 }
