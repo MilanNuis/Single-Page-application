@@ -9,7 +9,7 @@
         <ul role="list" class="divide-y divide-gray-200 border-b border-t border-gray-200">
           <li class="flex py-6">
             <div class="flex-shrink-0">
-              <img src="https://tailwindui.com/img/ecommerce-images/checkout-page-03-product-04.jpg" alt="Front side of mint cotton t-shirt with wavey lines pattern." class="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32">
+              <img src="https://pmot.nl/wp-content/uploads/2-5-600x600.jpg" alt="Front side of mint cotton t-shirt with wavey lines pattern." class="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32">
             </div>
 
             <div class="ml-4 flex flex-1 flex-col sm:ml-6">
@@ -40,7 +40,7 @@
           </li>
           <li class="flex py-6">
             <div class="flex-shrink-0">
-              <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-02.jpg" alt="Front side of charcoal cotton t-shirt." class="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32">
+              <img src="https://pmot.nl/wp-content/uploads/1-1-1-600x415.jpg" alt="Front side of charcoal cotton t-shirt." class="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32">
             </div>
 
             <div class="ml-4 flex flex-1 flex-col sm:ml-6">
