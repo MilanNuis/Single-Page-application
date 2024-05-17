@@ -17,6 +17,9 @@ if (!isAdmin()) {
                 </svg>
             </button>
             <h1 class=" text-white bg-red-500 rounded p-1 px-2  font-bold">PMOT</h1>
+            <a href="/">
+                <h1 class=" text-white bg-red-500 rounded p-1 px-2  font-bold">Terug</h1>
+            </a>
         </div>
         <nav class="hidden md:flex md:gap-x-11 md:text-sm md:font-semibold md:leading-6 md:text-gray-700">
         </nav>

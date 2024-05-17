@@ -89,7 +89,7 @@
         </div>
 
         <div class="mt-10">
-          <button type="submit" class="w-full rounded-md border border-transparent bg-red-500 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</button>
+          <a href="?page=checkout" class="flex justify-center w-full rounded-md border border-transparent bg-red-500 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-gray-50">Checkout</a>
         </div>
 
         <div class="mt-6 text-center text-sm">

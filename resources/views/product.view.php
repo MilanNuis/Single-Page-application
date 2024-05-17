@@ -89,7 +89,7 @@ $product = $stmt->fetch(PDO::FETCH_ASSOC);
 
             <!-- Size picker -->
 
-            <button type="submit" class="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-red-500 px-8 py-3 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2">Toevoegen aan mandje</button>
+            <a href="?page=cart" class="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-red-500 px-8 py-3 text-base font-medium text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2">Toevoegen aan mandje</a>
           </form>
 
           <!-- Product details -->

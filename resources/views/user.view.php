@@ -2,8 +2,6 @@
 
 $hideNav = true;
 
-var_dump($_SESSION);
-
 ?>
 <div class="h-full">
   <div class="min-h-full">
@@ -11,8 +9,11 @@ var_dump($_SESSION);
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 justify-between">
           <div class="flex">
-            <div class="flex flex-shrink-0 items-center">
+            <div class="flex flex-shrink-0 items-center gap-2">
               <h1 class=" text-white bg-red-500 rounded p-1 px-2  font-bold">PMOT</h1>
+              <a href="/">
+                <h1 class=" text-white bg-red-500 rounded p-1 px-2  font-bold">Terug</h1>
+              </a>
             </div>
             <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
               <a href="#" class="border-red-500 text-gray-900 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium" aria-current="page">Dashboard</a>
