@@ -1,6 +1,7 @@
 <?php
 
 require_once('../unitils/connection.php');
+require_once('../configs/helper.php');
 
 $tables = ['products', 'customers', 'articles'];
 
@@ -8,67 +9,6 @@ foreach ($tables as $table) {
     $sql = "TRUNCATE TABLE $table";
     $db->exec($sql);
     echo "Tabel $table geleegd.", PHP_EOL;
-}
-
-function createUser($firstname, $lastname, $email, $password, $country, $isAdmin, $db)
-{
-    $insertQuery = "INSERT INTO customers (firstName, lastName, email, password, country, isAdmin, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())";
-
-    try {
-        $insertStatement = $db->prepare($insertQuery);
-        $insertStatement->execute([$firstname, $lastname, $email, $password, $country, $isAdmin]);
-
-        echo "Gebruiker {$firstname} {$lastname} toegevoegd aan de database.", PHP_EOL;
-    } catch (PDOException $e) {
-        throw new PDOException('Er is iets fout gegaan bij het uitvoeren van de database query', 0, $e);
-    }
-}
-
-function createProduct($name, $description, $price, $stock, $categoryId, $imageURL, $db)
-{
-    $insertQuery = "INSERT INTO products (name, description, price, stock, category, imageURL) VALUES (?, ?, ?, ?, ?, ?)";
-
-    try {
-        $insertStatement = $db->prepare($insertQuery);
-        $params = [$name, $description, $price, $stock, $categoryId, $imageURL];
-        $insertStatement->execute($params);
-
-        echo "Product {$name} is toegevoegd aan de database" . PHP_EOL;
-    } catch (PDOException $e) {
-        throw new PDOException('Error executing database query: ' . $e->getMessage());
-    }
-}
-
-function createArticle($title, $author, $authorURL, $content, $tag, $db)
-{
-    $insertQuery = "INSERT INTO articles (title, author, authorURL, content, tag, date) VALUES (?, ?, ?, ?, ?, NOW())";
-
-    try {
-        $insertStatement = $db->prepare($insertQuery);
-        $params = [$title, $author, $authorURL, $content, $tag];
-        $insertStatement->execute($params);
-
-        echo "Product {$title} is toegevoegd aan de database" . PHP_EOL;
-    } catch (PDOException $e) {
-        throw new PDOException('Error executing database query: ' . $e->getMessage());
-    }
-}
-
-
-
-function createCategory($name, $db)
-{
-    $insertQuery = "INSERT INTO categories (name) VALUES (?)";
-
-    try {
-        $insertStatement = $db->prepare($insertQuery);
-        $insertStatement->execute([$name]);
-
-        echo "Category {$name} is toegevoegd aan de database", PHP_EOL;
-    } catch (PDOException $e) {
-        throw new PDOException('Er is iets fout gegaan bij het uitvoeren van de database query' . $e->getMessage());
-        die();
-    };
 }
 
 $users = [
